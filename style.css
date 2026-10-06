@@ -1,0 +1,172 @@
+/* Colours: change these few values to restyle the whole site */
+:root {
+  --paper:  #F2F5F7;
+  --ink:    #16212C;
+  --muted:  #56616D;
+  --rule:   #D6DDE3;
+  --accent: #1D5C86;
+  --dot:    #9DB0C0;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:  "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:  #121A22;
+    --ink:    #E6ECF1;
+    --muted:  #9AA7B3;
+    --rule:   #2A3743;
+    --accent: #7FB6DD;
+    --dot:    #4B6072;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- Layout ---------- */
+.hero, main, footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem;
+}
+
+.headline {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.35;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+}
+
+.intro { color: var(--muted); max-width: 34em; margin: 0 0 1.5rem; }
+
+.links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.links a { font-weight: 500; }
+
+/* ---------- Regression plot ---------- */
+.plot { margin: 0; }
+.plot svg { width: 100%; height: auto; display: block; }
+.plot figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; font-family: var(--serif); }
+.plot .axis { stroke: var(--rule); stroke-width: 1; }
+.plot .pt { fill: var(--dot); }
+.plot .fit {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw 1.6s 0.4s ease-out forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .plot .fit { animation: none; stroke-dashoffset: 0; }
+}
+
+/* ---------- Sections ---------- */
+section {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  line-height: 1.4;
+}
+
+.item + .item { margin-top: 2.25rem; }
+.item p { margin: 0.25rem 0 0; max-width: 40em; }
+.meta { color: var(--muted); font-size: 0.95rem; }
+.note { color: var(--muted); font-size: 0.9rem; font-style: italic; }
+
+.tags { list-style: none; padding: 0; margin: 0.75rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags li {
+  font-size: 0.85rem;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 0.75rem; font-weight: 500; }
+
+/* ---------- Experience timeline (it really is a sequence) ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--rule); }
+.timeline > li { position: relative; padding-left: 1.5rem; }
+.timeline > li + li { margin-top: 2rem; }
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -7px; top: 0.45rem;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--accent);
+}
+.timeline ul { margin: 0.5rem 0 0; padding-left: 1.1rem; max-width: 40em; }
+.timeline ul li + li { margin-top: 0.3rem; }
+
+/* ---------- Skills ---------- */
+.skills { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.6rem 1.5rem; }
+.skills dt { font-weight: 600; }
+.skills dd { margin: 0; color: var(--muted); }
+
+footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--muted); font-size: 0.9rem; }
+
+section:last-child { border-bottom: 1px solid var(--rule); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 3rem; gap: 2rem; }
+  .plot { max-width: 360px; }
+  section { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.25rem 0; }
+  .skills { grid-template-columns: 1fr; gap: 0.15rem; }
+  .skills dd { margin-bottom: 0.6rem; }
+}

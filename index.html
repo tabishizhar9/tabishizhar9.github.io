@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabish Izhar — Portfolio</title>
+  <meta name="description" content="Projects, papers and experience of Tabish Izhar, software engineer moving into machine learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- You don't need to edit this file. All text lives in content.js -->
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1 id="name"></h1>
+      <p class="headline" id="headline"></p>
+      <p class="intro" id="intro"></p>
+      <ul class="links" id="links"></ul>
+    </div>
+    <figure class="plot" aria-hidden="true">
+      <svg id="plot" viewBox="0 0 300 220"></svg>
+      <figcaption>y = wx + b, fitted by gradient descent</figcaption>
+    </figure>
+  </header>
+
+  <main>
+    <section id="projects-section">
+      <h2>Projects</h2>
+      <div id="projects"></div>
+    </section>
+
+    <section id="papers-section">
+      <h2>Papers</h2>
+      <div id="papers"></div>
+    </section>
+
+    <section id="experience-section">
+      <h2>Experience</h2>
+      <ol class="timeline" id="experience"></ol>
+    </section>
+
+    <section id="skills-section">
+      <h2>Skills</h2>
+      <dl class="skills" id="skills"></dl>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
