@@ -93,7 +93,7 @@ const SITE = {
     {
       role: "IT & Digital Workflow Specialist",
       place: "ClearPath Orthodontics, Pakistan",
-      dates: "2022 – 2022",
+      dates: "2022 – 2023",
       points: [
         "Worked with 3Shape OrthoAnalyzer and Dent One for orthodontic case analysis.",
         "Handled hardware, software and network support, and ran the department's IT on my own for a month."
