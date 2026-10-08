@@ -95,8 +95,7 @@ const SITE = {
       place: "ClearPath Orthodontics, Pakistan",
       dates: "2022 – 2023",
       points: [
-        "Worked with 3Shape OrthoAnalyzer and Dent One for orthodontic case analysis.",
-        "Handled hardware, software and network support, and ran the department's IT on my own for a month."
+        "Provided hardware, software and network support, and served as the main IT point of contact for one month."
       ]
     }
   ],
