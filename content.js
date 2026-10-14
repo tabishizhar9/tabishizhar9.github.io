@@ -108,6 +108,15 @@ const SITE = {
     }
   ],
 
+  certifications:[
+    {
+      title: "Supervised Machine Learning: Regression and Classification",
+      issuer: "DeepLearning.AI & Stanford University (Coursera)",
+      date: "Oct 2026",
+      link: "https://www.coursera.org/account/accomplishments/verify/LV8D0SGM8YZT"
+    }
+  ],
+
   /* ---------- Skills (each group is one line) ---------- */
   skills: [
     { group: "Languages", items: "Python, C++, JavaScript, PHP, Java, SQL, Shell" },
