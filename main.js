@@ -90,6 +90,23 @@ const expBox = document.getElementById("experience");
   expBox.appendChild(li);
 });
 
+/* ---------- Certifications ---------- */
+const certsBox = document.getElementById("certifications");
+const certs = SITE.certifications || [];
+if (!certs.length) document.getElementById("certifications-section").remove();
+certs.forEach((c) => {
+  const li = el("li");
+  li.appendChild(el("h3", {}, c.title));
+  const meta = [c.issuer, c.date].filter(has).join(", ");
+  if (meta) li.appendChild(el("p", { class: "meta" }, meta));
+  if (has(c.link)) {
+    const actions = el("div", { class: "actions" });
+    actions.appendChild(link(c.link, "View credential"));
+    li.appendChild(actions);
+  }
+  certsBox.appendChild(li);
+});
+
 /* ---------- Skills ---------- */
 const skillsBox = document.getElementById("skills");
 (SITE.skills || []).forEach((s) => {
